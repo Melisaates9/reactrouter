@@ -187,7 +187,7 @@ export const UserDetail = () => {
         </Tab>
         <Tab eventKey="profile" title="Albums">
           {albumData.map((album) => (
-            <Link to={ `/users/${userId}/albums/${album.id}`} key={album.id}>
+            <Link to={ `/users/${userId}/albums/${album.id}`} key={album.id} >
             <TextBlock>
               <h5> {album.title} </h5>
             </TextBlock>
