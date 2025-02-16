@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useFavoritePhotos } from '../stores/favorite';
-
+import { Link } from 'react-router-dom';
 function Navbars() {
     const favoritePhotos = useFavoritePhotos((state) => state.favoriteAlbums);
   return (
@@ -10,9 +10,9 @@ function Navbars() {
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home Page</Nav.Link>
-            <Nav.Link href="#features">Users</Nav.Link>
-            <Nav.Link href="#pricing">Favorite ({favoritePhotos.length}) </Nav.Link>
+            <Nav.Link as={Link} to={"/"} >Home Page</Nav.Link>
+            <Nav.Link as={Link} to={"/users"} >Users</Nav.Link>
+            <Nav.Link as={Link} to={"/"} >Favorite ({favoritePhotos.length}) </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -20,5 +20,4 @@ function Navbars() {
     </>
   );
 }
-
 export default Navbars;
