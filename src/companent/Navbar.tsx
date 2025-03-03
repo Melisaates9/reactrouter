@@ -12,7 +12,8 @@ function Navbars() {
           <Nav className="me-auto">
             <Nav.Link as={Link} to={"/"} >Home Page</Nav.Link>
             <Nav.Link as={Link} to={"/users"} >Users</Nav.Link>
-            <Nav.Link as={Link} to={"/"} >Favorite ({favoritePhotos.length}) </Nav.Link>
+            <Nav.Link as={Link} to={"/favorites"} >Favorite ({favoritePhotos.length}) </Nav.Link>
+
           </Nav>
         </Container>
       </Navbar>

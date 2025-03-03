@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom";
 
+import styled from "styled-components";
+
+ const Home=styled.p`
+justify-content: center;
+margin-top:25px ;
+font-size:80px;
+font-weight: bold;
+
+display: flex;
+
+ `
 export const Homepage = () => {
   return (
     <>
-      <div>Homepage</div>
-      <Link to="/">Ana Sayfa</Link>
-      <Link to="/users">Kullanıcılar</Link>
+<Home>Home Page</Home>
     </>
   );
 };
