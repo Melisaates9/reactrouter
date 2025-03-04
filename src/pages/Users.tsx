@@ -35,7 +35,7 @@ export const Users = () => {
 //jsonı sayfaya yazdırma kısmı
   return (
     <>
-      <div>users</div>
+      <h2>Users</h2>
       {users.map((user) => (
         <CardUser key={user.id}>
           <div> {user.name} </div>
