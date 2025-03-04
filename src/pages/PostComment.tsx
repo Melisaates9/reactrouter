@@ -65,7 +65,9 @@ export const PostComment = () => {
       postId: comment.postId
 
     } 
-
+    const savedComments =favComment.find((item)=>item.id===comment.id)
+if (savedComments) {removeFavComment(comment.id)}
+else {addFavoriteComments(CommentList)}
   }
   
 
