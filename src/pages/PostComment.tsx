@@ -3,6 +3,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import styled from "styled-components";
 import { usePostFavPage } from '../stores/favorite'
 import { Button } from "react-bootstrap";
+import { RiHeartsFill } from "react-icons/ri";
+import { RiHeartsLine } from "react-icons/ri";
 interface CommentProps {
   body: string;
   email: string;
@@ -50,11 +52,21 @@ export async function postLoader({ params }: { params: { userId: string } }) {
 export const PostComment = () => {
   const comment = useLoaderData() as CommentProps[];
 
- 
+ // FAVORİ LİSTSİNE EKLEDİĞİNİ GÖSTEREN ARRAY
   const favComment = usePostFavPage((state)=>state.CommentProps);
   const removeFavComment = usePostFavPage ((state)=> state.removeFavComment);
   const addFavoriteComments= usePostFavPage ((state)=> state.addFavoriteComments);
-  
+  const addFavComments = (comment:any)=>{  
+    const CommentList ={
+      body: comment.body,
+      email:comment.email,
+      id: comment.id,
+      name: comment.name,
+      postId: comment.postId
+
+    } 
+
+  }
   
 
 
@@ -68,7 +80,13 @@ export const PostComment = () => {
             <div> {comment.name} </div>
             <div> {comment.email} </div>
             <div> {comment.body} </div>
-            <Button> 
+            <Button onClick={()=>addFavComments(comment)}>
+              {favComment.some((fav)=>fav.id===comment.id)?(
+                <RiHeartsFill />
+
+              ): (
+                <RiHeartsLine />
+              )} 
               
 
             </Button>

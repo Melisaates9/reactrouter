@@ -64,6 +64,7 @@ export const Albums = () => {
   const addFavoriteAlbums = useFavoritePhotos(
     (state) => state.addFavoriteAlbums
   );
+  
   const removeFavorite = useFavoritePhotos((state) => state.removeFavorite);
   const addFav = (album: any) => {
     const favPic = {
